@@ -1,0 +1,16 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+system1 = GetSystem(Name="SYS")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.SetFile(FilePath="C:/Users/mofid/Downloads/Ansys_Static_Structural/E20V-300.stp")
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+geometryComponent1.Update(AllDependencies=True)
+model1.Exit()
+geometryComponent1.Update(AllDependencies=True)
+model1.Edit()
+model1.Edit()
+Save(Overwrite=True)
